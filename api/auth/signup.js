@@ -9,7 +9,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = req.body && Object.keys(req.body).length ? req.body : await parseJsonBody(req);
+    let body = req.body;
+    if (typeof body === 'string') {
+      try { body = JSON.parse(body); } catch (_) { body = {}; }
+    }
+    if (!body || (typeof body === 'object' && Object.keys(body).length === 0)) {
+      body = await parseJsonBody(req);
+    }
     const { name, email, password } = body || {};
 
     if (!name || !email || !password) {

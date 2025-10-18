@@ -1,18 +1,30 @@
 import { connectToDatabase } from './_lib/db.js';
 
 export default async function handler(req, res) {
+  const verbose = process.env.VERBOSE_HEALTH === 'true';
   try {
-    let database = 'Disconnected';
     try {
       const { db } = await connectToDatabase();
-      // Quick ping by listing collections name only to avoid heavy ops
-      await db.listCollections({}, { nameOnly: true }).toArray();
-      database = 'Connected';
+      // lightweight connectivity test
+      await db.command({ ping: 1 });
+      return res.status(200).json({ status: 'Server is running', database: 'Connected' });
     } catch (e) {
-      database = 'Disconnected';
+      if (verbose) {
+        console.error('Health DB connect error:', e);
+        return res.status(500).json({
+          status: 'Server is running',
+          database: 'Disconnected',
+          error: {
+            name: e?.name,
+            code: e?.code,
+            message: e?.message,
+          },
+        });
+      }
+      return res.status(500).json({ status: 'Server is running', database: 'Disconnected' });
     }
-    return res.status(200).json({ status: 'Server is running', database });
   } catch (err) {
+    if (verbose) console.error('Health handler error:', err);
     return res.status(500).json({ status: 'Error', database: 'Unknown' });
   }
 }
