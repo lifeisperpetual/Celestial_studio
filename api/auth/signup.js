@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import { connectToDatabase } from '../_lib/db.js';
+import { parseJsonBody } from '../_lib/http.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -8,7 +9,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, password } = req.body || {};
+    const body = req.body && Object.keys(req.body).length ? req.body : await parseJsonBody(req);
+    const { name, email, password } = body || {};
 
     if (!name || !email || !password) {
       return res.status(400).json({ success: false, message: 'Please provide all required fields' });
