@@ -4,6 +4,8 @@
 
 🔗 **[Live Demo](https://celestial-studio.vercel.app/)**
 
+> **⚠️ Note:** This is a demo project. No real payment processing is implemented. The checkout flow is for demonstration purposes only.
+
 ---
 
 ## ✨ Features
@@ -22,6 +24,7 @@
 - Real-time price calculations
 - Smooth cart sidebar with animations
 - Checkout flow with order success page
+- **Note:** No payment gateway integration (demo only)
 
 ### 🔐 **User Authentication**
 - Sign up and sign in functionality
