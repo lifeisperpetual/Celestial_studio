@@ -1,7 +1,5 @@
 # 🌟 Celestial Sneaker Studio
 
-![Celestial Studio Banner](https://img.shields.io/badge/Live-Demo-violet?style=for-the-badge&logo=vercel)
-
 **A futuristic 3D sneaker customization platform** where users can design, visualize, and purchase custom sneakers in an immersive web experience.
 
 🔗 **[Live Demo](https://celestial-studio.vercel.app/)**
@@ -285,12 +283,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ## 👨‍💻 Author
 
 **lifeisperpetual**
@@ -309,19 +301,11 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 ## 📸 Screenshots
-
-### Home Page
-![Home Page](https://via.placeholder.com/800x400/1e293b/8b5cf6?text=Celestial+Studio+Home)
-
-### 3D Customization Studio
-![Studio](https://via.placeholder.com/800x400/1e293b/ec4899?text=3D+Customization+Studio)
-
-### Shopping Cart
-![Cart](https://via.placeholder.com/800x400/1e293b/06b6d4?text=Shopping+Cart)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f16020d9-2256-4199-9bde-1fa88d391ff4" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/734bc617-18bf-48ce-bd29-256a9b2afc95" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1007d843-a842-4bd4-b0ed-af3b27bf2be4" />
 
 ---
-
-<div align="center">
 
 **Built with ❤️ and lots of ☕**
 
